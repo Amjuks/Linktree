@@ -1,0 +1,7 @@
+Hey there! I’ve been diving into the world of coding for about seven years now, and it’s been an amazing journey. I started with Scratch, which was a fun introduction, and then I jumped into learning C as my first programming language. From there, I explored SQL, Java, and even picked up C# for some light game development in Unity.
+
+My real passion, though, lies in AI and machine learning, along with web development. I love creating things, and some of my latest projects include building image classifiers and generators for numbers and beautiful sceneries.
+
+I got my start with some great courses from Harvard and earned certificates that helped me build a strong foundation. Since then, I’ve been mostly self-taught, exploring new technologies and pushing my limits.
+
+These days, I’m focused on expanding my skills in AIML and web development, always excited to learn more and tackle new challenges. Let’s connect and share ideas!

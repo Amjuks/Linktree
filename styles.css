@@ -1,0 +1,226 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('images/background.png') no-repeat center center fixed;
+    background-size: cover; /* Ensure the background covers the entire screen */
+    color: #e0e0e0; /* Light text */
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in; /* Fade-in effect for the body */
+}
+
+/* Container Styles */
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: rgba(30, 30, 50, 0.8); /* Darker background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    position: relative; /* For positioning offcanvas */
+    animation: slideUp 1s ease; /* Slide-up effect for the container */
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 120px; /* Set a fixed height for the images */
+}
+
+/* Profile Image Styles */
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.profile-img.active {
+    opacity: 1;
+}
+
+/* Link Styles */
+.links {
+    margin-top: 20px;
+}
+
+.link {
+    display: grid; /* Use flexbox for layout */
+    grid-template-columns: 70px 1fr;
+    /* align-items: center; Center items vertically */
+    margin: 10px 0;
+    /* padding: 12px; */
+    /* background-color: white; Transparent background for the entire button */
+    background-color: #1da1f2;
+    color: #333; /* Dark text for better contrast */
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    position: relative; /* For positioning the icon background */
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.link i {
+    background-color: white; /* White background for the icon */
+    border-radius: 50%; /* Round icon background */
+    padding: 10px; /* Space around the icon */
+    /* margin-right: 8px; Space between icon and text */
+    margin: 12px;
+    max-width: 20px;
+}
+
+.link span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    font-weight: 500;
+    /* background-color: #0077b5; */
+}
+
+.link:hover {
+    transition: all .3s;
+    color: white;
+    background-color: #0077b5; /* Light gray on hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Increased shadow on hover */
+}
+
+/* Button Styles */
+#readMoreBtn,
+#closeBioBtn {
+    padding: 8px 16px; /* Smaller padding */
+    background-color: #4b0082; /* Indigo color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 14px; /* Smaller font size */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: background-color 0.3s; /* Transition for hover */
+}
+
+#readMoreBtn:hover,
+#closeBioBtn:hover {
+    background-color: #3e007a; /* Darker indigo on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Offcanvas Styles */
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    padding: 20px; /* Added padding to prevent edges touching */
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
+}
+
+.offcanvas-content {
+    max-height: 90%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: left;
+    position: relative;
+    white-space: pre-wrap; /* Handle whitespace for multiple paragraphs */
+    width: 100%; /* Full width of the offcanvas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    animation: fadeIn 0.5s ease-in; /* Fade-in effect for offcanvas content */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Bio Section Styles */
+.bio-section {
+    background: rgba(255, 255, 255, 0.1); /* Light mystic background */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Prevent overflow when closed */
+    transition: opacity 0.5s ease, max-height 0.5s ease; /* Smooth transition */
+}
+
+.bio-section.visible {
+    opacity: 1;
+    max-height: 100%;
+    /* max-height: 500px; Set a max-height for the open state */
+}
+
+.bio-section.visible p {
+    text-align: start;
+}
+
+/* Link Icon Colors */
+.links a i {
+    margin-right: 8px; /* Space between icon and text */
+    transition: color 0.3s; /* Transition for hover */
+}
+
+/* Individual Icon Colors */
+.link.linkedin i { color: #0077b5; /* LinkedIn blue */ }
+.link.github i { color: #333; /* GitHub dark gray */ }
+.link.twitter i { color: #1da1f2; /* Twitter blue */ }
+.link.portfolio i { color: #ff5722; /* Portfolio orange */ }
+.link.medium i { color: #00ab6c; /* Medium green */ }
+.link.devto i { color: #00b489; /* Dev.to green */ }
+.link.stack-overflow i { color: #f48024; /* Stack Overflow orange */ }
+.link.instagram i { color: #e1306c; /* Instagram pink */ }
+.link.youtube i { color: #ff0000; /* YouTube red */ }
+.link.reddit i { color: #ff4500; /* Reddit orange */ }
+
+/* Hover Effects */
+.links a:hover i {
+    filter: brightness(1.2); /* Brighten icon on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.offcanvas.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bio-section.visible {
+    opacity: 1;
+    max-height: 100%;
+}
